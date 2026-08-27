@@ -74,7 +74,6 @@ Behaviour:
 | Area | Requirement |
 |---|---|
 | Performance | Default route renders the greeting within 2 seconds on a cold cache at 1 Mbps network speed |
-| Accessibility | Greeting remains keyboard-reachable by page focus order, visible focus is present, and text contrast meets 4.5:1 or better |
 | Responsive | Page renders at 320px width and above with no horizontal scroll |
 | Privacy | Module stores no personal data |
 
