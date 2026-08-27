@@ -1,0 +1,80 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-bg: #f8fafc;
+  --color-surface: #ffffff;
+  --color-surface-raised: rgba(255, 255, 255, 0.82);
+  --color-border: rgba(148, 163, 184, 0.24);
+  --color-text: #0f172a;
+  --color-text-muted: #475569;
+  --color-primary: #2563eb;
+  --color-primary-text: #ffffff;
+  --color-focus: #2563eb;
+  --color-focus-ring: rgba(37, 99, 235, 0.35);
+  --color-shadow: rgba(15, 23, 42, 0.12);
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-9: 36px;
+  --space-10: 40px;
+  --space-11: 44px;
+  --text-base: 1rem;
+  --text-lg: 1.05rem;
+  --text-h1: clamp(3rem, 10vw, 6.5rem);
+  --radius-md: 10px;
+  --radius-lg: 24px;
+  --radius-xl: 32px;
+  --radius-full: 999px;
+  --border-width: 1px;
+  --shadow-lg: 0 24px 70px var(--color-shadow);
+  --duration-base: 700ms;
+  --duration-loop: 2.2s;
+  --easing-enter: ease-out;
+  --easing-loop: ease-in-out;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100%;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  background: radial-gradient(circle at top, var(--color-surface), var(--color-bg) 55%), var(--color-bg);
+  color: var(--color-text);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: var(--text-base);
+  line-height: 1.6;
+}
+
+:focus-visible {
+  outline: var(--border-width) solid var(--color-focus);
+  outline-offset: var(--space-4);
+  box-shadow: 0 0 0 var(--space-4) var(--color-focus-ring);
+  border-radius: var(--radius-md);
+}
+
+.app-shell {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-6);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 1ms;
+    animation-iteration-count: 1;
+    scroll-behavior: auto;
+    transition-duration: 1ms;
+  }
+}
