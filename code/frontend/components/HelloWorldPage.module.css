@@ -6,8 +6,9 @@
 }
 
 .card {
-  width: min(760px, 100%);
-  min-height: min(70vh, 620px);
+  width: 100%;
+  max-width: calc(var(--space-11) * 19);
+  min-height: 70vh;
   padding: var(--space-10) var(--space-6);
   display: grid;
   place-items: center;
@@ -16,7 +17,7 @@
   border: var(--border-width) solid var(--color-border);
   border-radius: var(--radius-xl);
   box-shadow: var(--shadow-lg);
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(var(--space-4));
   animation: floatIn var(--duration-base) var(--easing-enter) both;
 }
 
@@ -38,3 +39,4 @@
     transform: translateY(0) scale(1);
   }
 }
+
