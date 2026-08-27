@@ -147,8 +147,20 @@ jobs:
           # Hex colours, rgb()/rgba() literals, and px lengths outside a
           # var(). Borders and hairlines of 0-2px are exempt: they are not
           # spacing decisions and the design system does not tokenise them.
+          #
+          # Two more are exempt for the same reason. A media query cannot hold a
+          # token at all — CSS does not expand var() in a feature value — so
+          # `@media (max-width: 479px)` was a rule no author could satisfy, and
+          # the author who met it deleted the breakpoint rather than tokenise
+          # it. A length inside min()/max()/clamp() is a layout bound and not a
+          # spacing step: `width: min(760px, 100%)` says how wide the element
+          # may grow, which the design system does not tokenise either.
+          #
+          # Measured on one Hello World story: three of its five fix attempts
+          # went to these two false positives, and the story came within one
+          # attempt of shipping nothing over a grep.
           if grep -nE '(#[0-9a-fA-F]{3,8}\b|rgba?\([^)]*\)|(^|[^-a-zA-Z0-9])[3-9][0-9]*px)' "${files[@]}" \
-               | grep -v 'var(--'; then
+               | grep -vE 'var\(--|@media|\b(min|max|clamp)\('; then
             echo "::error::Hardcoded colour or length in a CSS module. Use a token from app/globals.css."
             exit 1
           fi
