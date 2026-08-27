@@ -23,7 +23,7 @@ Design system: `design/design-system.md`
 
 **Out of scope** — name what a reader would reasonably expect here and say where it lives instead.
 
-- Database persistence — deliberately not built.
+- Login, accounts, or session state — deliberately not built.
 - Navigation or footer content — deliberately not built.
 - Any additional page beyond the landing page — deliberately not built.
 
