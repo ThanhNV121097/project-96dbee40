@@ -15,8 +15,7 @@
   margin: 0;
   color: var(--color-text);
   font-size: var(--text-h1);
-  line-height: 0.95;
-  letter-spacing: -0.06em;
+  line-height: 1;
 }
 
 @keyframes floatIn {
@@ -27,12 +26,5 @@
   to {
     opacity: 1;
     transform: translateY(0) scale(1);
-  }
-}
-
-@media (max-width: 479px) {
-  .card {
-    padding: var(--space-5);
-    border-radius: var(--radius-lg);
   }
 }
